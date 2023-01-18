@@ -1,10 +1,10 @@
-user have many posts
-posts belongs to user
-comments belongs to posts
-post has many comments
+user have many posts -
+posts belongs to user -
+comments belongs to posts -
+post has many comments -
+comments belong to user and post -
+comments may also belong to user - one to many -
 
-comments may also belong to user - one to many
-comments belong to user and post
 
 CMS content management system
 
