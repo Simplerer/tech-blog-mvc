@@ -1,0 +1,28 @@
+user have many posts
+posts belongs to user
+comments belongs to posts
+post has many comments
+
+comments may also belong to user - one to many
+comments belong to user and post
+
+CMS content management system
+
+use activity 17 as a starter base
+
+have main and homepage - build the rest
+
+use insomnia to check routes
+
+add authenticatioin last 
+
+can omit update and delete if it is too difficult - hardest part
+
+establish datamodel
+establish relationships
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+Models
+add cypto on password in user        HOOK!!                  
