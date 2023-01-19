@@ -3,30 +3,35 @@ const Comment = require('./Comment');
 const Post = require('./Post');
 
 
-User.hasMany(Post, {
-    foreignKey: 'user_id',
-})
+// User.hasMany(Comment, {
+//     through: Post
+// })
 
-User.hasMany(Comment, {
-    foreignKey: 'user_id',
-})
+
+// Comment.belongsToMany(User, {
+//     through: Post
+// })
+
+// Post.hasMany(Comment, {
+//     through: {
+//         model: User,
+//         unique: false,
+//     }
+// })
 
 Post.belongsTo(User, {
     foreignKey: 'user_id'
-})
+});
 
-Comment.belongsTo(User, {
+User.hasMany(Post, {
     foreignKey: 'user_id'
-})
+});
 
-Post.hasMany(Comment, {
+Comment.belongsToMany(User, {
     through: {
-        model: User,
-        unique: false,
+        model: Post,
     }
 })
-
-Comment.belongsTo(Post);
 
 
 
