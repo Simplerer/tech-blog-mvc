@@ -11,12 +11,20 @@ Post.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        comments: {
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1,30]
+            }
+        },
+        content: {
             type: DataTypes.STRING,
             allowNull: false,
         },
         user_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'user',
                 key: 'id',
@@ -25,7 +33,7 @@ Post.init(
 },
 {
    sequelize,
-   timestamps: false,
+   timestamps: true,
    freezeTableName: true,
    underscored: true,
    modelName: 'post',

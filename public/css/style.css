@@ -1,0 +1,44 @@
+:root {
+    --tan: #EFF7CF;
+    --lGreen: #BAD9B5;
+    --mustard: #ABA361;
+    --red: #732C2C;
+    --bourg: #420C14;
+}
+
+body {
+    background-color: var(--tan);
+}
+
+header, footer {
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-end;
+    color: var(--mustard);
+    background-color: var(--bourg);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    color: var(--red);
+    text-decoration: overline;
+}
+
+#card-header {
+    background-color: var(--bourg);
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-end;
+}
+
+h2 {
+    color: var(--mustard);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#card-body {
+    background-color: var(--mustard);
+    color: var(--red);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

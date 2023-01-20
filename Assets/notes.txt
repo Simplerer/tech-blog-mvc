@@ -18,9 +18,33 @@ add authenticatioin last
 
 can omit update and delete if it is too difficult - hardest part
 
-establish datamodel
-establish relationships
+----------------------------------------------------------------------------------------------------------
 
+THIS IS WHERE I CAN GET HELP
+
+
+
+-07 dish-routes shows how to get data to render
+
+const thisData = await This.findByPk(req.params.id);
+
+const this = thisData.get({ plain: true })
+
+can also do 
+
+const thisData = JSON.parse(JSON.stringify(thisData))
+
+ALSO const this = thisData.map(data => data.get({ plain: true }));
+   - this is foer looping through all, though JSON sandwich works also
+
+either is used before 
+
+res. render('where this is going', this)
+
+
+-09 dish-routes shows how to post
+  all.handlebars has how a form will layout on a page to gather info
+  
 
 
 ----------------------------------------------------------------------------------------------------------------------------
@@ -37,3 +61,25 @@ UTILS
 
 VIEWS
 --------------------
+
+
+
+Needs  -  - -  -  - - - - - 
+
+- homepage
+    - existing blog posts
+    - nav links for homepage and dashboard
+    - login option
+- homepage option takes to homepage but all other request sign-up or login 
+- choose to sign up get prompted to create a username, password and ypu are signed up, does not mention email in readme
+-  when signed in options are now available 
+    - nav for homepage, dashboard, and log out
+- homepage option take you to home with older blog posts which have a post title and date created
+- clicking on an old blog post will show post title, content, post's creator's username, and date created for thay post
+- option to leave a comments
+- comment is added when submit button is clicked, blog is updated with comment creator's username and date created
+- dashboard will take user to their specific posts and option to create new post
+- new post will prompt title and content
+-create button will do that, updates dashboard page
+- click on own blogs, you can update or delete, reloads page
+- logout will return to homepage with no option to update untill signed in

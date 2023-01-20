@@ -33,6 +33,7 @@ Comment.belongsToMany(User, {
     }
 })
 
+Comment.belongsTo(Post);
 
 
 
