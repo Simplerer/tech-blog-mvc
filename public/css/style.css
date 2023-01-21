@@ -7,10 +7,20 @@
 }
 
 body {
+    background-color: rgb(146, 111, 66);
+    height: 100%;
+}
+
+main {
     background-color: var(--tan);
 }
 
-header, footer {
+#whole {
+    margin: auto;
+    width: 90%;
+}
+
+header {
     display: flex;
     justify-content: space-between;
     align-content: flex-end;
@@ -25,7 +35,13 @@ nav {
     text-decoration: overline;
 }
 
+section {
+    background-color: var(--mustard);
+    color: var(--red);
+}
+
 #card-header {
+    padding: 8px;
     background-color: var(--bourg);
     display: flex;
     justify-content: space-between;
@@ -38,7 +54,8 @@ h2 {
 }
 
 #card-body {
-    background-color: var(--mustard);
-    color: var(--red);
+    font-size: 18px;
+    padding: 8px;
+    margin: 8px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

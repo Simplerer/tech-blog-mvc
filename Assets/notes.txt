@@ -83,3 +83,17 @@ Needs  -  - -  -  - - - - -
 -create button will do that, updates dashboard page
 - click on own blogs, you can update or delete, reloads page
 - logout will return to homepage with no option to update untill signed in
+
+if loggedIn for options
+
+
+
+-- css
+
+a hover: color, maybe size change
+a : decoration, color etc
+
+button decoration - transition?
+
+border-bottom on header, maybe not different color
+
