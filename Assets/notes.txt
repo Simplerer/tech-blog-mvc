@@ -73,3 +73,32 @@ this works with user too
 res.render('which view', { datas: datas, user: 'user' });
 
 use {{user}} in templates
+
+
+
+-------------
+
+{{format_date post.created_at}}
+format is in helper, mehtod is first info to be passed as a parameter is second
+
+
+----------
+
+req.session
+
+{{#if loggedIn}}
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    <!-- Otherwise, show a link to login -->
+    <a href="/login">Login</a>
+    {{/if}}
+
+req.sesson.user = {
+        username: dbUserData.username,
+        email: dbUserData.email,
+        id: dbUserData.id,
+      }
+
+      this instead of loggedIn,
+      change in home routes as well
+      

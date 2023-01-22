@@ -6,7 +6,11 @@ router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({});
     const posts = postData.map((post) => post.get({ plain: true }));
-    res.render('homepage', { posts });
+    res.render('homepage', { 
+      posts, 
+      loggedIn: req.session.loggedIn,
+      // user: req.session.user
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -23,11 +27,46 @@ router.post('/', async (req,res) => {
   }
 })
 
+// Get user's posts for Dashboard
+
+router.get('/dashboard', async (req, res) => {
+  try {
+    const postData = await Post.findAll({
+
+    });
+    const posts = postData.map((post) => post.get({ plain: true }));
+    res.render('dashboard', { posts,
+      loggedIn: req.session.loggedIn,
+      // user: req.session.user,
+        layout: 'home' });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+// router.get('/:user_id', async (req, res) => {
+//   try {
+//     const postData = await Post.findAll({
+//       where: {
+//           user_id: req.params.user_id
+//       }, 
+//       include: [{ 
+//           model: User,
+//           attributes: ['username']
+//        }]
+//     })
+//     res.render('dashboard', { posts , layout:'home' });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
 
 
 
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.user) {
     res.redirect('/');
     return;
   }
@@ -36,7 +75,7 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.user) {
     res.redirect('/');
     return;
   }

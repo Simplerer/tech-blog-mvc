@@ -3,36 +3,7 @@ const { User, Post } = require('../../models');
 
 
 
-// Get user's posts
 
-router.get('/', async (req, res) => {
-    try {
-      const postData = await Post.findAll({});
-      const posts = postData.map((post) => post.get({ plain: true }));
-      res.render('dashboard', { posts, layout: 'home' });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
-
-
-router.get('/:user_id', async (req, res) => {
-    try {
-      const postData = await Post.findAll({
-        where: {
-            user_id: req.params.user_id
-        }, 
-        include: [{ 
-            model: User,
-            attributes: ['username']
-         }]
-      })
-      res.json(postData);
-    //   res.render('homepage');
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
 
 router.post('/', async (req,res) => {
     console.log(req.body)

@@ -6,6 +6,10 @@
     --bourg: #a16e3b;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #c1cd93;
     height: 100%;
@@ -75,7 +79,7 @@ a {
     box-shadow: 2px 2px gray;
 }
 
-section {
+.home-posts {
     background-color: var(--tan);
     color: var(--red);
     padding: 1%;
@@ -109,4 +113,23 @@ section {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 600;
     color: var(--bourg);
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+#post-it {
+    position: fixed;
+    bottom: 0%;
+    padding: 24px;
+    margin-bottom: 1%;
+    font-size: 24px;
+    font-family: 'Candara';
+    font-weight: 600;
+    box-shadow: 2px 2px gray;
+    background-color: var(--bourg);
+    color: var(--mustard);
 }
