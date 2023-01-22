@@ -1,70 +1,4 @@
-user have many posts -
-posts belongs to user -
-comments belongs to posts -
-post has many comments -
-comments belong to user and post -
-comments may also belong to user - one to many -
 
-
-CMS content management system
-
-use activity 17 as a starter base
-
-have main and homepage - build the rest
-
-use insomnia to check routes
-
-add authenticatioin last 
-
-can omit update and delete if it is too difficult - hardest part
-
-----------------------------------------------------------------------------------------------------------
-
-THIS IS WHERE I CAN GET HELP
-
-
-
--07 dish-routes shows how to get data to render
-
-const thisData = await This.findByPk(req.params.id);
-
-const this = thisData.get({ plain: true })
-
-can also do 
-
-const thisData = JSON.parse(JSON.stringify(thisData))
-
-ALSO const this = thisData.map(data => data.get({ plain: true }));
-   - this is foer looping through all, though JSON sandwich works also
-
-either is used before 
-
-res. render('where this is going', this)
-
-
--09 dish-routes shows how to post
-  all.handlebars has how a form will layout on a page to gather info
-  
-
-
-----------------------------------------------------------------------------------------------------------------------------
-Need to work on
-
-CONTROLLERS
--------------------
-
-PUBLIC
-------------------------
-
-UTILS
----------------------
-
-VIEWS
---------------------
-
-
-
-Needs  -  - -  -  - - - - - 
 
 - homepage
     - existing blog posts
@@ -97,3 +31,45 @@ button decoration - transition?
 
 border-bottom on header, maybe not different color
 
+--- homepage design
+
+- title upper left, changes to dashboard when there, or maybe included with?>
+
+- nav underscored
+
+- sign up takes full screen 
+
+    -  header - sign up  -
+    -  username
+    - password
+    -sign up - submit button
+    - login instead link
+
+- new post button opens form, same set up but
+
+    - header - creat new post
+    -title
+    -content
+    -button - create  
+
+-click title of post on homepage, pulls up comment form
+comment and submit only
+
+
+
+
+--------
+
+passing the property of layout in render can change the main template
+
+- like this ----
+
+res.render('which view', { datas: datas, layout: 'otherLayout' });
+
+in layout folder ---> otherLayout.handlebars
+
+this works with user too
+
+res.render('which view', { datas: datas, user: 'user' });
+
+use {{user}} in templates

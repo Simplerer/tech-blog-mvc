@@ -1,5 +1,6 @@
-<h1>Homepage</h1>
         {{#each posts}}
+<div id="beside">
+<button id="comment">Add</button>
 <section>
         <div id="card-header">
             <h2>{{title}}</h2>
@@ -7,11 +8,5 @@
         </div>
         <p id="card-body">{{content}}</p>
 </section>
+</div>
         {{/each}}
-<section>
-        <div id="card-header">
-            <h2>This is a Title for a blog Post</h2>
-            <p>Here is a time stamp for that Post</p>
-        </div>
-        <p id="card-body">Some Content that I am making about tech and how I think I know what I am talking about</p>
-</section>
