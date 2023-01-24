@@ -1,22 +1,17 @@
 <section class="dashboard">
-{{#if loggedIn}}
-<p>hey you! {{user}}</p>
-{{/if}}
 
-       {{#each posts}}
-<div id="beside">
-<button id="comment">Add To</button>
-<section class="home-posts">
-        <div id="card-header">
-            <h2>{{title}}</h2>
-            <p>Here is a time stamp for that Post</p>
-        </div>
-        <p id="card-body">{{content}}</p>
-</section>
-</div>
-        {{/each}}
+    {{#each posts}}
+    <div id="beside">
+        <section class="home-posts">
+            <div id="card-header">
+                <h2>{{title}}</h2>
+                <p>Here is a time stamp for that Post</p>
+            </div>
+            <p id="card-body">{{content}}</p>
+        </section>
+    </div>
+    {{/each}}
 
+    <button id="post-it"><a href="/posts">Add Post</a></button>
 
-<button id="post-it"><a href="/posts">Post it!</a></button>
-    
 </section>

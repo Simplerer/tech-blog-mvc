@@ -123,7 +123,8 @@ a {
 
 #post-it {
     position: fixed;
-    bottom: 0%;
+    top: 22%;
+    right: 2%;
     padding: 24px;
     margin-bottom: 1%;
     font-size: 24px;
@@ -132,4 +133,6 @@ a {
     box-shadow: 2px 2px gray;
     background-color: var(--bourg);
     color: var(--mustard);
+    box-shadow: 4px 4px rgb(103, 128, 53);
+    border-radius: 8px;
 }
