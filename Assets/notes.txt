@@ -1,13 +1,5 @@
 
 
-- homepage
-    - existing blog posts
-    - nav links for homepage and dashboard
-    - login option
-- homepage option takes to homepage but all other request sign-up or login 
-- choose to sign up get prompted to create a username, password and ypu are signed up, does not mention email in readme
--  when signed in options are now available 
-    - nav for homepage, dashboard, and log out
 - homepage option take you to home with older blog posts which have a post title and date created
 - clicking on an old blog post will show post title, content, post's creator's username, and date created for thay post
 - option to leave a comments
@@ -16,9 +8,6 @@
 - new post will prompt title and content
 -create button will do that, updates dashboard page
 - click on own blogs, you can update or delete, reloads page
-- logout will return to homepage with no option to update untill signed in
-
-if loggedIn for options
 
 
 
@@ -101,4 +90,10 @@ req.sesson.user = {
 
       this instead of loggedIn,
       change in home routes as well
+
+
+
+      ---  Need add if logged in to dashboard link, add comment 
+           - hide login and sign up
+           - home button to login
       

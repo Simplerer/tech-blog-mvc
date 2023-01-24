@@ -10,20 +10,23 @@
 
 <body>
   <div id="whole">
-  <header>
-    <h1>A Tech-E-ish Blog</h1>
-    <nav>
-        <p class="links"><a href="/dashboard">Dashboard</a></p>
+    <header>
+      <h1>A Tech-E-ish Blog</h1>
+      <nav>
+        {{#if loggedIn}}
+        <p class="links"><a href="/dashboard/{{userId}}">Dashboard</a></p>
+        <p class="links"><a id="logout-link" href="/">Logout</a></p>
+        {{else}}
         <p class="links"><a href="/signup">Sign Up</a></p>
         <p class="links"><a href="/login">Login</a></p>
-        <p class="links"><a id="logout-link"><a href="/">Logout</a></p>
-    </nav>
-  </header> 
-  <main>
-    {{{body}}}
-  </main>
+        {{/if}}
+      </nav>
+    </header>
+    <main>
+      {{{body}}}
+    </main>
   </div>
-<script src="/js/logout.js"></script>
+  <script src="/js/logout.js"></script>
 </body>
 
 </html>
