@@ -69,7 +69,7 @@ router.get('/post/edit/:id', (req, res) => {
   })
 })
 
-// add comment to a post by post's id
+// comment to a post 
 
 router.get('/post/comment/:id', async (req, res) => {
   try {
@@ -77,12 +77,16 @@ router.get('/post/comment/:id', async (req, res) => {
       {include: [{ 
         model: User,
         attributes: ['username', 'id'] 
-      }]}
+      },
+    {
+      model: Comment,
+      attributes: ['comments', 'user_id', 'createdAt']
+    }]}
       )
       const data = await editData.get({ plain: true })
-      console.log(data)
       res.render('comment', {
-        data: data,         
+        data: data,
+        userId: req.session.userId,         
         layout: 'user'
       })
   } catch (err) {

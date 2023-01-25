@@ -6,8 +6,15 @@
         </div>
         <p id="card-body">{{data.content}}</p>  
     </div>
+    {{#each data.comments}}
     <div>
-        <form id="comment-value" data-id="{{data.user.id}}">
+        <p>{{comments}}</p>
+        <p>{{format_date createdAt}}</p>
+        <p>{{user}}</p>
+    </div>
+    <div>
+    {{/each}}
+        <form id="comment-value" data-id="{{userId}}">
         <p><input type="text" id="comment"></p>
         <button type="submit" id="commentBtn">Add Your comment</button>
         </form>
