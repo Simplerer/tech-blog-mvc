@@ -2,7 +2,6 @@ const postForm = async function (event) {
     event.preventDefault();
     const userId = document.querySelector('#userId');
     const id = userId.value
-    console.log(id)
 
     const title = document.querySelector('#post-title');
     const content = document.querySelector('#post-content');
@@ -27,3 +26,6 @@ const postForm = async function (event) {
 document
     .querySelector('#post-form')
     .addEventListener('submit', postForm);
+
+    // event.target.dataset.id
+    // const id = event.target.dataset.id

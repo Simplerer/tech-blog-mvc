@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
 
 
 
-router.put('/dashboard/:id', async (req, res) => {
+router.put('/update/:id', async (req, res) => {
     try {
         const postData = await Post.update({
             title: req.body.title,
@@ -33,7 +33,7 @@ router.put('/dashboard/:id', async (req, res) => {
     }
 });
 
-router.delete('/dashboard/:id', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
     try {
         const postData = await Post.destroy({
             where: { id: req.params.id }

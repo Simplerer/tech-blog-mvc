@@ -1,10 +1,10 @@
         {{#each posts}}
 <div id="beside">
-<button id="comment">Add To</button>
+<button id="comment"  data-id="{{id}}">Add To</button>
 <section class="home-posts">
         <div id="card-header">
             <h2>{{title}}</h2>
-            <p>Here is a time stamp for that Post</p>
+            <p>Posted by {{user.username}} on {{format_date createdAt}}</p>
         </div>
         <p id="card-body">{{content}}</p>
 </section>

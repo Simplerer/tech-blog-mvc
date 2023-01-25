@@ -4,12 +4,17 @@ const { User, Comment, Post } = require('../models/');
 // get all posts for homepage
 router.get('/', async (req, res) => {
   try {
-    const postData = await Post.findAll({});
+    const postData = await Post.findAll({
+      include: [{ 
+        model: User,
+        attributes: ['username'] 
+      }]
+    });
     const posts = postData.map((post) => post.get({ plain: true }));
     res.render('homepage', { 
       posts, 
       loggedIn: req.session.loggedIn,
-      userId: req.session.userId
+      userId: req.session.userId,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -54,6 +59,22 @@ router.get('/posts', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// edit post view
+
+router.get('/post/edit/:id', async (req, res) => {
+   try {
+      const editData = await Post.findByPk(req.params.id)
+      console.log(editData)
+      res.render('edit-post', {
+        editData,
+        userId: req.session.userId, 
+        layout: 'user'
+      })
+   } catch (err) {
+    res.status(500).json(err);
+   }
+})
 
 // get login page
 

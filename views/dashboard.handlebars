@@ -1,15 +1,17 @@
 <section class="dashboard">
 
     {{#each posts}}
+    <a href="/post/edit/{{id}}">
     <div id="beside">
         <section class="home-posts">
-            <div id="card-header">
+            <div id="card-header" data-id="{{id}}">
                 <h2>{{title}}</h2>
                 <p>Here is a time stamp for that Post</p>
             </div>
             <p id="card-body">{{content}}</p>
         </section>
     </div>
+    </a>
     {{/each}}
 
     <button id="post-it"><a href="/posts">Add Post</a></button>

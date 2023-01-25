@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header">
+    <h2>Update Post</h2>
+  </div>
+  <div id="signup" role="tabpanel">
+    <form id="post-form" class="card-body">
+      <div>
+        <label for="post-title">Title</label>
+        <textarea name="title" id="post-title" cols="30" rows="10"></textarea>
+      </div>
+      <div>
+        <label for="blog-content">Content</label>
+        <textarea id="post-content"></textarea>
+      </div>
+      <button type="submit" id="edit-btn" class="btn">Update-it!</button>
+      <input type="hidden" id="userId" name="userId" value="{{userId}}">
+    </form>
+    <button id="delete"><a href="/dashboard">Delete Post</a></button>
+  </div>
+</div>
+
+<script src="/js/delete.js"></script>
+<script src="/js/update.js"></script>
