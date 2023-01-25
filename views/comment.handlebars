@@ -1,0 +1,18 @@
+<section class="home-posts">
+    <div>
+        <div id="card-header">
+            <h2>{{data.title}}</h2>
+            <p>Posted by {{data.user.username}} on {{format_date data.createdAt}}</p>
+        </div>
+        <p id="card-body">{{data.content}}</p>  
+    </div>
+    <div>
+        <form id="comment-value" data-id="{{data.user.id}}">
+        <p><input type="text" id="comment"></p>
+        <button type="submit" id="commentBtn">Add Your comment</button>
+        </form>
+    </div>
+
+</section>
+
+<script src="/js/comment.js"></script>

@@ -4,9 +4,9 @@
     <a href="/post/edit/{{id}}">
     <div id="beside">
         <section class="home-posts">
-            <div id="card-header" data-id="{{id}}">
+            <div id="card-header">
                 <h2>{{title}}</h2>
-                <p>Here is a time stamp for that Post</p>
+                <p>Posted {{format_date createdAt}}</p>
             </div>
             <p id="card-body">{{content}}</p>
         </section>

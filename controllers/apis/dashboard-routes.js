@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post } = require('../../models');
+const { User, Post, Comment } = require('../../models');
 
 // creating posts
 
@@ -47,7 +47,7 @@ router.delete('/delete/:id', async (req, res) => {
 
 // creating comments onto posts
 
-router.post('/', async (req, res) => {
+router.post('/comment', async (req, res) => {
     console.log(req.body)
     try {
         const commentData = await Comment.create(req.body);

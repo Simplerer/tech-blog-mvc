@@ -62,18 +62,32 @@ router.get('/posts', async (req, res) => {
 
 // edit post view
 
-router.get('/post/edit/:id', async (req, res) => {
-   try {
-      const editData = await Post.findByPk(req.params.id)
-      console.log(editData)
-      res.render('edit-post', {
-        editData,
-        userId: req.session.userId, 
+router.get('/post/edit/:id', (req, res) => {
+  res.render('edit-post', {
+    userId: req.session.userId, 
+    layout: 'user'
+  })
+})
+
+// add comment to a post by post's id
+
+router.get('/post/comment/:id', async (req, res) => {
+  try {
+    const editData = await Post.findByPk(req.params.id,
+      {include: [{ 
+        model: User,
+        attributes: ['username', 'id'] 
+      }]}
+      )
+      const data = await editData.get({ plain: true })
+      console.log(data)
+      res.render('comment', {
+        data: data,         
         layout: 'user'
       })
-   } catch (err) {
+  } catch (err) {
     res.status(500).json(err);
-   }
+  }
 })
 
 // get login page
