@@ -3,7 +3,7 @@
     --lGreen: #BAD9B5;
     --mustard: #c1cd93;
     --red: #732C2C;
-    --bourg: #a16e3b;
+    --burntorange: #a16e3b;
 }
 
 * {
@@ -22,7 +22,7 @@ body {
 
 header {
     color: var(--mustard);
-    background-color: var(--bourg);
+    background-color: var(--burntorange);
     display: flex;
     justify-content:space-between;
     align-content: center;
@@ -67,9 +67,8 @@ a {
     margin-left: 1%;
 }
 
-#comment {
+#comment-link {
     height: 50%;
-    color: var(--bourg);
     font-family: Candara;
     font-weight: 700;
     margin: 2%;
@@ -77,6 +76,16 @@ a {
     padding: 8px;
     background-color: var(--tan);
     box-shadow: 2px 2px gray;
+    cursor: pointer;
+}
+
+#comment-link:hover {
+    scale: 1.1;
+    transition: 30ms;
+}
+
+#comment-link > a {
+    color: var(--red)
 }
 
 .home-posts {
@@ -93,7 +102,7 @@ a {
 
 #card-header {
     padding: 8px;
-    background-color: var(--bourg);
+    background-color: var(--burntorange);
     display: flex;
     justify-content: space-between;
     align-content: flex-end;
@@ -112,7 +121,7 @@ a {
     margin: 8px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 600;
-    color: var(--bourg);
+    color: var(--burntorange);
 }
 
 .dashboard {
@@ -131,8 +140,54 @@ a {
     font-family: 'Candara';
     font-weight: 600;
     box-shadow: 2px 2px gray;
-    background-color: var(--bourg);
+    background-color: var(--burntorange);
     color: var(--mustard);
     box-shadow: 4px 4px rgb(103, 128, 53);
     border-radius: 8px;
+}
+
+.comment-card {
+    padding: 4px;
+    margin: 8px;
+    color: #421553;
+    border: 2px s;
+    border-color: #421553;
+    background-color: #d3dab5;
+    box-shadow: 2px 2px rgb(103, 128, 53);
+    border-radius: 8px;
+}
+
+.comment-card > p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 4px;
+}
+
+.comment-section {
+    height: 72px;
+    width: 90%;
+    color: #421553;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 4px;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: var(--tan);
+    box-shadow: 2px 2px gray;
+}
+
+#commentBtn {
+    padding: 4px;
+    border-radius: 8px;
+    margin-left: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#commentBtn:hover {
+    scale: 1.1;
+    transition: 30ms;
 }
