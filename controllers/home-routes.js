@@ -25,18 +25,14 @@ router.get('/', async (req, res) => {
 
 router.get('/dashboard/:id', async (req, res) => {
   try {
-    if (!req.session.loggedIn) {
-      res.redirect('/login');
-      return;
-    }
     const postData = await Post.findAll({
       include: [{ model: User }],
       where: {
-        userId: req.params.id,
+        user_id: req.params.id,
       }
     });
+    // res.json(postData)
     const posts = postData.map((post) => post.get({ plain: true }));
-
     res.render('dashboard', { posts,
       loggedIn: req.session.loggedIn,
       user: req.session.username,
@@ -73,15 +69,25 @@ router.get('/post/edit/:id', (req, res) => {
 
 router.get('/post/comment/:id', async (req, res) => {
   try {
+    if (!req.session.loggedIn) {
+      res.redirect('/login');
+      return;
+    }
     const editData = await Post.findByPk(req.params.id,
-      {include: [{ 
-        model: User,
-        attributes: ['username', 'id'] 
-      },
+      {include: [
     {
       model: Comment,
-      attributes: ['comments', 'user_id', 'createdAt']
-    }]}
+      attributes: ['comments', 'user_id', 'createdAt'],
+      include: [{
+        model:User,
+        attributes: ['username']
+      }]
+    },
+    {
+      model: User,
+      attributes: ['username']
+    }
+  ]}
       )
       const data = await editData.get({ plain: true })
       res.render('comment', {

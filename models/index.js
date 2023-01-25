@@ -19,7 +19,7 @@ User.hasMany(Comment, {
     foreignKey: 'user_id'
 });
 
-Comment.belongsToMany(User, {
+Comment.belongsTo(User, {
     through: {
         model: Post,
     }
