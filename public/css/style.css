@@ -225,3 +225,22 @@ a {
     padding: 8px;
     box-shadow: 2px 2px gray;
 }
+
+.card {
+    background-color: #d3dab5;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 2%;
+}
+
+.forms {
+    padding: 4px;
+}
+
+.button {
+    padding: 4px;
+}
+
+.button > a {
+    color: black;
+}
