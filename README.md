@@ -7,7 +7,7 @@
   - [Questions](#questions)
     
   ## Description
-  This application is a working blog site for sharing thought on tech gear, or whatever you may be thinking about! The main point of building this was to test my skills on using templates for designing and actively updating a live site. I used express to work routes and express session to apply active logged in sessions and the ability to create a username and persist posts or comments.
+  This application is a working blog site for sharing thought on tech gear, or whatever you may be thinking about! The main point of building this was to test my skills on using templates for designing and actively updating a live site. The template program I use here is handlebars with CSS of my own design. I used express to work routes and express session to apply active logged in sessions and the ability to create a username and persist posts or comments. 
 
   ## Link to Site
   
